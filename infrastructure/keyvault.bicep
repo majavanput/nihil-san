@@ -2,7 +2,7 @@ resource keyVault 'Microsoft.KeyVault/vaults@2025-05-01' = {
   name: 'MizuEnaKeyVault'
   location: 'westeurope'
   properties: {
-    tenantId: 'bf1b5129-7317-4dff-b781-a1b1f3c49520'
+    tenantId: '0a34997f-a704-47b8-8c77-7fb303a57b7b'
     sku: {
       family: 'A'
       name: 'standard'
