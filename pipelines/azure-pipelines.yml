@@ -36,5 +36,5 @@ stages:
               action: 'Create Or Update Resource Group'
               resourceGroupName: 'AZ-400'
               location: 'westeurope'
-              templateLocation: 'Linked Artifact'
+              templateLocation: 'Linked artifact'
               csmFile: '../infrastructure/keyvault.bicep'
