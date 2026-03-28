@@ -32,14 +32,17 @@ stages:
             displayName: 'MizuEna Step'
   - stage: DeployKeyVault
     displayName: 'Deploy Key Vault Stage'
-    steps:
-      - task: AzureResourceManagerTemplateDeployment@3
-        inputs:
-          deploymentScope: 'Resource Group'
-          azureResourceManagerConnection: ${{ parameters.azureServiceConnection }}
-          subscriptionId: 'bf1b5129-7317-4dff-b781-a1b1f3c49520'
-          action: 'Create Or Update Resource Group'
-          resourceGroupName: 'AZ-400'
-          location: 'westeurope'
-          templateLocation: '../infrastructure/keyvault.bicep'
-          csmFile: '../infrastructure/keyvault.bicep'
+    jobs:
+      - job: DeployKeyVaultJob
+        displayName: 'Deploy Key Vault'
+        steps:
+          - task: AzureResourceManagerTemplateDeployment@3
+            inputs:
+              deploymentScope: 'Resource Group'
+              azureResourceManagerConnection: ${{ parameters.azureServiceConnection }}
+              subscriptionId: 'bf1b5129-7317-4dff-b781-a1b1f3c49520'
+              action: 'Create Or Update Resource Group'
+              resourceGroupName: 'AZ-400'
+              location: 'westeurope'
+              templateLocation: '../infrastructure/keyvault.bicep'
+              csmFile: '../infrastructure/keyvault.bicep'
