@@ -14,3 +14,11 @@ stages:
         steps:
           - script: echo "Printing the project..."
             displayName: 'Print Step'
+  - stage: MizuEna
+    displayName: 'MizuEna Stage'
+    jobs:
+      - job: MizuEnaJob
+        displayName: 'MizuEna Job'
+        steps:
+          - script: echo "MizuEna..."
+            displayName: 'MizuEna Step'
