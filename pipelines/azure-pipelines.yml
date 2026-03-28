@@ -14,14 +14,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages:
-  - stage: Print
-    displayName: 'Print Stage'
-    jobs:
-      - job: PrintJob
-        displayName: 'Print Job'
-        steps:
-          - script: echo "Printing the project..."
-            displayName: 'Print Step'
   - stage: MizuEna
     displayName: 'MizuEna Stage'
     jobs:
@@ -44,5 +36,5 @@ stages:
               action: 'Create Or Update Resource Group'
               resourceGroupName: 'AZ-400'
               location: 'westeurope'
-              templateLocation: '../infrastructure/keyvault.bicep'
+              templateLocation: 'Linked Artifact'
               csmFile: '../infrastructure/keyvault.bicep'
