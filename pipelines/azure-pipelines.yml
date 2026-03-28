@@ -1,0 +1,16 @@
+name: GitHub Help
+
+trigger:
+  branches:
+    include:
+      - main
+
+stages:
+  - stage: Print
+    displayName: 'Print Stage'
+    jobs:
+      - job: PrintJob
+        displayName: 'Print Job'
+        steps:
+          - script: echo "Printing the project..."
+            displayName: 'Print Step'
